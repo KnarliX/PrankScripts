@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s;
+            flex-direction: column;
+        }
+        #instruction {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        #prank-button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            transition: top 0.1s, left 0.1s;
+        }
+        #video-container {
+            display: none;
+            width: 560px;
+            height: 315px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #credit {
+            font-size: 0.8em;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="instruction">If you want to see magic, click on the button</div>
+    <button id="prank-button">Catch me if you can!</button>
+    <div id="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/u5LctAfDFxQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="credit">Created by <a href="https://www.youtube.com/channel/UCn0U0vU1QfNUky7Dz7E_SMg" target="_blank">Rajnish (Kartoul)</a></div>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        function getRandomPosition() {
+            const x = Math.floor(Math.random() * (window.innerWidth - 150));
+            const y = Math.floor(Math.random() * (window.innerHeight - 50));
+            return { x, y };
+        }
+
+        function moveButton() {
+            const button = document.getElementById('prank-button');
+            const { x, y } = getRandomPosition();
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function showVideo() {
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'block';
+        }
+
+        document.getElementById('prank-button').addEventListener('click', showVideo);
+
+        setInterval(changeBackgroundColor, 1000);
+        setInterval(moveButton, 200);
+    </script>
+</body>
+</html>

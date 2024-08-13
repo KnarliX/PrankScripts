@@ -10,7 +10,7 @@ Welcome to the PrankScripts repository! This collection features fun and harmles
 
 ### 2. Loop Window Open Prank
 - **Description:** This prank causes a loop of windows to open on the user's screen, making it seem like the computer is out of control.
-- **Direct Use Link:** [Loop Window Open Prank](https://rajnish-kartoul.github.io/Loop-window-open/)
+- **Direct Use Link 1st:** [Loop Window Open Prank](https://rajnish-kartoul.github.io/Loop-window-open/)
 - **Direct Use Link 2nd:** [Loop Window Open Prank](https://kartoul-prank.netlify.app)
 
 ## How to Use
